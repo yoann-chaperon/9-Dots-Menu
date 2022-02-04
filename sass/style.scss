@@ -7,11 +7,11 @@
 @import "libs/font.scss";
 
 //---- COLOR -----//
-$color1: #2f363e;
-$color2: rgba(255, 255, 255, 0.2);
+$color1: #10131c;
+$color2: #212532;
 $color3: #fff;
 $color4: #bcbcc0;
-$color5:#95999D;
+$color5: #95999d;
 
 body {
     display: flex;
@@ -19,97 +19,23 @@ body {
     align-items: center;
     min-height: 100vh;
     background: $color1;
-    font-family: "Poppins", sans-serif;
 }
-
-.container {
+.navigation {
     position: relative;
-    width: 350px;
-    min-height: 500px;
-    background: $color1;
-    border-radius: 30px;
-    padding: 50px;
-    box-shadow: 25px 25px 75px $B000025, 10px 10px 70px $B000025,
-        inset 5px 5px 10px $B00005, inset 5px 5px 20px $color2,
-        inset -5px -5px 15px $B000075;
-    & h3 {
-        color: $color3;
-        font-weight: 700;
-        font-size: 1.2em;
-    }
-    & .list {
-        position: relative;
-        display: flex;
-        align-items: center;
-        margin: 20px 0;
-        cursor: pointer;
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 45px;
-            height: 45px;
-            background: $telegram;
-            border-radius: 22.5px;
-            box-shadow: 5px 5px 7px $B000025, inset 2px 2px 5px $color2,
-                inset -3px -3px 5px $B00005;
-            transition: 0.5s;
-        }
-        & .rank {
-            position: relative;
-            min-width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-right: 10px;
-            &::before {
-                content: "";
-                position: absolute;
-                width: 30px;
-                height: 30px;
-                background: $color1;
-                border-radius: 30px;
-                transform: scale(0);
-                transition: 0.5s;
-            }
-        }
-        & .creator {
-            position: relative;
-            line-height: 1.15em;
-            & h4 {
-                font-weight: 700;
-                color: $color4;
-                transition: 0.5s;
-            }
-            & p {
-                font-weight: 400;
-                color: $color5;
-                font-size: 0.85em;
-                transition: .5s;
-            }
-        }
-    }
-}
-
-.container .list:hover .rank::before {
-    transform: scale(1);
-}
-
-.container .list .rank span {
-    position: relative;
-    color: $color3;
-    font-weight: 400;
-    font-size: 1em;
+    width: 70px;
+    height: 70px;
+    background: $color2;
+    border-radius: 10px;
+    cursor: pointer;
     transition: 0.5s;
-}
-.container .list:hover::before {
-    width: 100%;
-}
-
-.container .list:hover .creator h4,
-.container .list:hover .creator p {
-    color: $color3;
+    &.active {
+        width: 200px;
+        height: 200px;
+    }
+    & span {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background: $color3;
+    }
 }
