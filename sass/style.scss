@@ -1,17 +1,12 @@
 // import
-@import "libs/color.scss";
-@import "libs/responsive.scss";
 @import "libs/reset.scss";
-@import "libs/mixins.scss";
-@import "libs/function.scss";
-@import "libs/font.scss";
 
 //---- COLOR -----//
 $color1: #10131c;
 $color2: #212532;
 $color3: #fff;
-$color4: #bcbcc0;
-$color5: #95999d;
+$color4: #333849;
+$color5: #2DFC52;
 
 body {
     display: flex;
@@ -27,15 +22,45 @@ body {
     background: $color2;
     border-radius: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: 0.5s;
+    transition-delay: 0.8s;
     &.active {
         width: 200px;
         height: 200px;
+        transition-delay: 0.8s;
+        & span {
+            background: $color4;
+            width: 45px;
+            height: 45px;
+            transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+            & ion-icon {
+            font-size: 1.35em;
+            color: $color3;
+            }
+            &:hover ion-icon {
+                color: $color5;
+                filter: drop-shadow(0 0 2px $color5) drop-shadow(0 0 5px $color5) drop-shadow(0 0 15px $color5);
+            }
+        }
     }
     & span {
         position: absolute;
         width: 7px;
         height: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background: $color3;
+        border-radius: 50%;
+        transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+        transition: width 0.5s, transform 0.5s, height 0.5s, background 0.5s;
+        transition-delay: calc(0.1s * var(--i));
+        & ion-icon {
+            transition: .5s;
+            font-size: 0;
+        }
     }
 }
